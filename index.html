@@ -1,5 +1,771 @@
-<title>Web Designer in Auraiya, Uttar Pradesh</title>
+
+<html><head>  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://kit.fontawesome.com/378be5ec82.js" crossorigin="anonymous"></script>
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+* { font-family: 'Lato', sans-serif;
+  margin: 0; box-sizing: border-box;
+  -webkit-user-select: none !important; -moz-user-select: -moz-none !important; -ms-user-select: none !important; user-select: none !important;}
 
 
 
-<h1>औरैया में वेब डिज़ाइनर</h1>
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: #f2a900;
+  color: white;
+  width: 50px; font-size: 21px;
+  text-align: center; 
+  border-radius: 8px 0px 0px 8px;
+}
+
+.input-field, .select-btn {
+  width: 100%;
+  padding: 10px;
+  outline: none; border-left: none!important;
+  background-color: #fff; 
+  box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  border: 1px solid #cbc9c9;
+  border-radius: 0px 8px 8px 0px;
+}
+
+.input-field:focus {
+  border-bottom: 1px solid #f2a900;
+}
+
+#start_btn { margin: 0px; float: right;
+  background-color: #1b326c;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9; font-weight: bold;
+  border-radius: 8px;
+}
+
+/* DISABLE SCROLL IN INPUT NUMBER */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+} 
+input[type=number] { -moz-appearance: textfield; }
+
+
+/* PLACEHOLDER COLOR CSS */
+::placeholder { color: #404040; }
+:-ms-input-placeholder { color: #404040; }
+::-webkit-input-placeholder { color: #404040; }
+
+/* DROPDOWN SELECT MENU */
+select{  color: #404040; }
+select option { color: black; }
+
+
+#login_container { padding: 30px 20px;
+  margin: auto; margin-top: 85px;
+  width: 90%;  max-width: 480px;
+  border-radius: 8px/7px; 
+  background-color: #ebebeb; 
+  box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  border: 1px solid #cbc9c9;
+}
+
+
+/* QUIZ CSS */
+
+#container {
+  padding: 30px 20px;
+  margin: 25px auto; 
+  width: 90%;  max-width: 480px;
+  border-radius: 8px;  
+  box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  border: 1px solid #cbc9c9;
+
+  -webkit-transition: opacity 1.5s ease-in-out; 
+  -moz-transition: opacity 1.5s ease-in-out;
+  -ms-transition: opacity 1.5s ease-in-out;
+  -o-transition: opacity 1.5s ease-in-out; 
+  transition: opacity 1.5s ease-in-out;
+}
+
+  .question {   text-align: justify;   
+  width: 99%;
+  font-size: 25px;
+  cursor: pointer;
+  margin-bottom: 18px;
+  }
+
+
+  .answer { 
+    width: 99%;
+    color: #000000;
+    background: aliceblue; 
+    border: 1px solid #84c5fe;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 17px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+.option-para{ margin: 0; }
+/*  
+.correct { background-color: #90EE90!important; }
+.incorrect { background-color: #ffcccb !important; } 
+  */
+
+.no_dp { width: 0!important; height: 0!important; overflow: hidden!important; border: 0; outline: 0; color: white; background-color: white; display: inline-bloc; position: fixed; top: -1000px; left: -1000px; }
+</style>
+
+
+</head><body onload="removeElement(), show_login();">
+
+
+<script>
+function removeElement() {
+  document.getElementById("container").style.display = "none";
+  document.getElementById("finished_container").style.display = "none";
+} 
+ 
+function show_login() {
+  document.getElementById("login_container").style.display = "block";
+}
+
+function remove_login() {
+  document.getElementById("login_container").style.display = "none"; 
+}
+
+function show_quiz() {
+  document.getElementById("container").style.display = "block";
+}
+</script>
+
+ 
+
+
+        <script type="text/javascript"> 
+           function validate(){
+               if (document.getElementById("uname").value == ""){
+                   alert("Please enter your FULL NAME"); return false; 
+               }
+               if (document.getElementById("uphone").value == ""){
+                   alert("Please enter your PHONE NUMBER"); return false; 
+               }
+               if (document.getElementById("ugen").value == ""){
+                   alert("Please select your GENDER"); return false; 
+               }
+               if (document.getElementById("uinst").value == ""){
+                   alert("Enter select your INSTITUTE"); return false; 
+               }
+              else {  
+                       openFullscreen()
+                       document.getElementById("validate_btn").click()
+          fire_timer();
+                     //  document.getElementById("reset_timer").click();
+ } 
+           }
+        </script>
+    
+ 
+
+       <form method="post" autocomplete="off" name="iti.auraiya.online">
+
+ 
+ 
+<div id="login_container">
+
+  <div class="input-container"> 
+    <i class="fa fa-user icon"></i>
+  <input class="input-field" id="uname" type="text" placeholder="Full Name" name="NAME" maxlength="23" id="fullname"  required >
+  </div>
+
+  <div class="input-container">
+    <i class="fas fa-phone-square-alt icon"></i>
+    <input class="input-field" id="uphone" type="number" placeholder="Phone Number" name="MOBILE" required>
+  </div>    
+
+  <div class="input-container">
+    <i class="fa fa-venus-mars icon"></i>
+   <select name="GENDER" class="select-btn" id="ugen" required> 
+      <option value="" disabled selected hidden>Select Gender</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select>  
+</div>    
+
+  <div class="input-container"> 
+    <i class="fa fa-book icon"></i>
+    <input type="text" name="TRADE" class="input-field" value="COPA" readonly/>
+
+
+  </div>    
+
+  <div class="input-container">
+   <i class="fa fa-graduation-cap icon"></i> 
+   <select name="INSTITUTE" class="select-btn" id="uinst">
+      <option value="" disabled selected hidden>Select Institute</option>
+    <option value="Govt. ITI, Auraiya">Govt. ITI, Auraiya</option>
+    <option value="Govt. ITI, Ajitmal">Govt. ITI, Ajitmal</option>
+    <option value="Govt. ITI, Bidhuna">Govt. ITI, Bidhuna</option> 
+  </select>    
+  </div>    
+
+ 
+
+
+<br/>
+        <span id="start_btn" onclick="validate();">Start</span>
+<span class="no_dp" id="validate_btn" onclick="remove_login(), show_quiz();"></span>
+
+ <br/><br/>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="container">
+  
+  
+  
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+.quiz_nav {
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.quiz_nav {
+    color: #004085;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
+    padding: 5px;
+    border-radius: 5px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.quiz_nav_con {
+    font-weight: 400;
+    font-size: 14px; 
+} 
+
+.quiz_nav_box {
+    font-size: 15px;
+    padding: 0px 4px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    background: #343a40;
+    border: 1px solid #343a40; 
+}
+
+.ques_no { float: left;}
+.timer { float: right; width: 135px; }
+
+.row-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.col-container { float: left; width: 50%; }
+</style> 
+
+  <br/> 
+
+<section class="row-container">
+<div class="col-container">
+<span class="quiz_nav ques_no">
+               <!-- <span class="quiz_nav_con">Question</span> -->
+                <span class="quiz_nav_box">
+                              <span id="ques_no">01</span>/30
+</span>
+</span>  
+</div>
+
+ 
+<div class="col-container">
+<span class="quiz_nav timer">
+                <span class="quiz_nav_con">Time Left</span>
+                <span class="quiz_nav_box"><span class="minute">00</span>:<span class="second">00</span></span>
+            </span>
+
+</div>
+</section>
+  
+  <br/>
+<div id="question" class="qtext question"></div>
+
+<div data-n="0" onclick="answerClicked(this.getAttribute('data-n'), this), setTimeout(update_ques, 400);" class="answer">
+<p class="option-para" id="0"></p></div>
+<div data-n="1" onclick="answerClicked(this.getAttribute('data-n'), this), setTimeout(update_ques, 250);" class="answer">
+<p class="option-para" id="1"></p></div>
+<div data-n="2" onclick="answerClicked(this.getAttribute('data-n'), this), setTimeout(update_ques, 250);" class="answer">
+<p class="option-para" id="2"></p></div>
+<div data-n="3" onclick="answerClicked(this.getAttribute('data-n'), this), setTimeout(update_ques, 250);" class="answer">
+<p class="option-para" id="3"></p></div>
+ 
+   </div>    <!-- CLOSED FOR w-container -->
+<textarea class="no_dp" id="udata" name="USER_DATA"></textarea>
+<textarea class="no_dp" id="start_time" name="START_DATE_TIME"></textarea>
+<textarea class="no_dp" id="end_time" name="END_TIME"></textarea>
+
+<script>
+var start_dt = new Date();
+document. getElementById("start_time").innerHTML = (("0"+start_dt.getDate()).slice(-2)) +"/"+ (("0"+(start_dt.getMonth()+1)).slice(-2)) +"/"+ (start_dt.getFullYear()) +"  "+ (("0"+start_dt.getHours()).slice(-2)) +":"+ (("0"+start_dt.getMinutes()).slice(-2));
+
+document.getElementById ("udata").innerHTML = navigator.appVersion; 
+</script>      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <span class="no_dp" id="update_ques">UPDATE QUES NO</span>
+  
+
+<span class="no_dp" onclick="setTimeout(update_ques, 250);">250MS</span>
+
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+           
+
+        </div> 
+ 
+  <script> 
+function fire_timer() {   timer.reset(600),  timer.start(1000)
+          //    document.getElementById("strt").click();
+ } 
+
+function _timer(t){var e,i=0,n=1,o=0;return this.start=function(u){u=void 0!==u?u:1e3,0==o&&(o=1,e=setInterval(function(){switch(n){default:i&&(i--,r(),"function"==typeof t&&t(i));break;case 1:i<86400&&(i++,r(),"function"==typeof t&&t(i))}},u))},this.stop=function(){1==o&&(o=0,clearInterval(e))},this.reset=function(t){i=t=void 0!==t?t:0,r()},this.mode=function(t){n=t},this.getTime=function(){return i},this.getMode=function(){return n},this.getStatus,o;function r(){var t=i%60,e=Math.floor(i/60)%60,n=Math.floor(i/3600)%60;t=t<10?"0"+t:t,e=e<10?"0"+e:e,n=n<10?"0"+n:n,$(".timer .second").html(t),$(".timer .minute").html(e),$(".timer .hour").html(n)}}var timer;$(document).ready(function(t){(timer=new _timer(function(t)
+{0==t&&(timer.stop(),
+
+document.getElementById("quiz_result_submit").click(),
+ removeElement(),
+  document.getElementById("finished_container").style.display = "block"
+
+)})).reset(0),timer.mode(0)}); 
+
+
+function update_ques() { document.getElementById("update_ques").click();  }
+           
+$('#update_ques').click(function () {
+    
+    $('#ques_no').text(function (i, n) {
+        n = +n;
+        return (n < 9 ? "0" : "") + (n + 1);
+    }); 
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<input type="text" name="MARKS" id="quiz_result"  class="no_dp" readonly>
+    <input type="submit" name="submit" id="quiz_result_submit" class="no_dp" />
+
+</form>
+
+
+       
+
+
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+
+  <script>
+    // QUESTION 01
+var Quiz = [
+
+  {"question": "What is the main page of a website called ?",
+"answers":["URL", "Home Page","Basic Page", "Error Page"],
+"Correct": 1},
+    
+{"question": "What is the fullform of RAM ?",
+"answers":["Ready Application Module", "Realtime Application Module","Random Access Memory", "Read Application Memory"],
+"Correct": 2},
+        
+{"question": "Which was used in first generation computers ?",
+"answers":["Vacuum Tube", "Silicon Chip","Transistor", "Integrated Circuit"],
+"Correct": 0},
+     
+{"question": "Who is the founder of Microsoft ?",
+"answers":["Steve Jobs", "Bill Gates","Blaze Pascal", "None of these"],
+"Correct": 1},    
+    
+{"question": "Physical structure of computer is also known as :",
+"answers":["Software", "Hardware","Operating System", "Hard Disk"],
+"Correct": 1},
+ 
+{"question": "Which of the following products is sold under the name Pentium ?",
+"answers":["Computer", "Microprocessor","Software", "Operating System"],
+"Correct": 1},        
+    
+{"question": "When is Computer Literacy Day celebrated ?",
+"answers":["01 December", "02 December","03 December", "04 December"],
+"Correct": 1},
+             
+{"question": "What is the full name of CPU ?",
+"answers":["Central Program Unit", "Central processing unit","Control processing unit", "None of these"],
+"Correct": 1}, 
+    
+{"question": "Which of the following is used to check answer book in objective test?",
+"answers":["MICR", "OCR","OMR", "BCR"],
+"Correct": 2},
+      
+{"question": "What is the full form of PDF ?",
+"answers":["Portable Drive Format", "Portable Document Format","Publishing Document Format", "None of these"],
+"Correct": 1},
+         
+{"question": "What was the first device to calculate ?",
+"answers":["Adding Machine", "Abacus","Analytical Engine", "Super Computer"],
+"Correct": 1},
+     
+{"question": "What is the full name of BIOS ?",
+"answers":["Basic Intra Operating System", "Basic Internet operating system","Basic Internal Output system", "Basic Input Output System"],
+"Correct": 3},
+
+{"question": "Who invented Analytical engine ?",
+"answers":["Charles Babbage", "John Lickert","John Mauchy", "M.V Wilkes"],
+"Correct": 0},
+
+
+{"question": "Which is the first general purpose programmable electronic computer ?",
+"answers":["ENIAC", "EDVAC","EDSAC", "UNIVAC"],
+"Correct": 0},
+
+{"question": "Which is the sequence, in which computer operates ?",
+"answers":["Input- Output - Process", "Input - Process - Output","Process - Input - Output", "Output - Process - Input"],
+"Correct":1},
+
+{"question": "What is the purpose of expansion slot in mother board ?",
+"answers":["To insert the keyboard", "To insert the RAM","To insert the additional peripherals", "To insert the mouse"],
+"Correct": 2},
+
+{"question": "Which one is used as authentication for paring bluetooth devices ?",
+"answers":["Password", "Passcode","Fingerprint", "Captcha"],
+"Correct": 1},
+
+{"question": "Which shortcut key is used to refresh Windows desktop ?",
+"answers":["F1", "F3","F5", "F9"],
+"Correct": 2},
+
+{"question": "What is the capacity of typical DVD ?",
+"answers":["780 MB", "1.8 GB","2.3 GB", "4.7 GB"],
+"Correct": 3},
+
+{"question": "Which act as an intermediate between a user and a computer ?",
+"answers":["Macros", "Antivirus","Operating System", "MS Office"],
+"Correct": 2},
+
+{"question": "Which process is used to record data on to an optical disc ?",
+"answers":["Burning", "Reading","Accepting", "Accessing"],
+"Correct": 0},
+
+{"question": "What is BIOS ?",
+"answers":["Firmware", "Hardware","Software", "None of these"],
+"Correct": 0},
+
+{"question": "Which system is used by bluetooth for broadcasting ?",
+"answers":["Satellite", "Telephone Lines","Microwaves", "Radiowaves"],
+"Correct": 3}, 
+    
+{"question": "What is Linux ?",
+"answers":["Computer", "Anti-virus","Operating System", "Virus"],
+"Correct": 2},       
+    
+{"question": "What is the function of UPS ?",
+"answers":["To charge computer battery", "Providing sufficient voltage to the computer","To provide uninterrupted power supply to computer", "None of these"],
+"Correct": 2},
+    
+{"question": "What is a junk e-mail called ?",
+"answers":["Script", "Virus","Spam", "Profile"],
+"Correct": 2},
+              
+{"question": "What is the full name of POST ?",
+"answers":["Program On Self Test", "Power Off System Test","Power On Self Test", "Power On System Test"],
+"Correct": 2},
+     
+{"question": "Best Quality graphics are produced by",
+"answers":["Dot Matrix", "Laser Printer","Inkjet Printer", "Plotter"],
+"Correct": 3},
+
+{"question": "Memory which forgets everything when you switch off the power is known as :",
+"answers":["Corrupted", "Volatile","Non-volatile", "Non-corrupted"],
+"Correct": 1},
+
+{"question": "A computer cannot 'boot' if it does not have",
+"answers":["Compiler", "Loader","Operating System", "Assembler"],
+"Correct": 2}   
+    
+  
+  
+  
+];
+
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', finishLoading );
+
+var question = document.getElementById("question");
+var container = document.getElementById("container");
+var answer = document.getElementsByClassName("option-para");
+
+
+var all = Quiz.length;
+var state = {"score": 0};
+function finishLoading() {
+  updatePosition();
+}
+
+function buttonLoaded() {} 
+
+// when option is clicked function start
+function answerClicked(id, obj) {
+  container.style.opacity = 0;
+  if(id == state["current"].Correct) {
+      changeColor(true, obj);
+    }else{
+      changeColor(false, obj);
+    }
+  
+  setTimeout(function(){
+    if(id == state["current"].Correct) {
+      updatePosition(true);
+    }else{
+      updatePosition(false);
+    }},
+    500);
+}  // when option is clicked function end
+
+
+   // DOM which is used to hide the container by default
+document.getElementById("w-board-container").style.display = "none";
+function updatePosition(inc) {
+  var score = state["score"];
+  if(Quiz.length <1){
+    state = {
+      "current": current,
+      "score": (inc ? (++score) : score)
+    };
+
+
+// WHILE QUIZ HAS BEEN FINISHED
+
+    // alert which will be displayed as result (score)
+ //   alert("YOU ANSWERED CORRECTLY " + score + " OUT OF " + all  + "");
+    document.getElementById('quiz_result').value = "" + score + "";
+ 
+var end_dt = new Date();
+document. getElementById("end_time").innerHTML = (("0"+end_dt.getHours()).slice(-2)) +":"+ (("0"+end_dt.getMinutes()).slice(-2));
+
+document.getElementById("quiz_result_submit").click();
+    
+    
+    document.getElementById("quiz_result_submit").disabled = true;
+    
+  document.getElementById("finished_container").style.display = "block";
+
+
+ 
+    setTimeout(setEndText(), 250);
+  
+    setTimeout((endObj.style.opacity = 1), 500);
+    
+  }else{    
+    var index = Math.floor(Math.random()*Quiz.length);
+    if (index > -1){
+          var current = Quiz[index];
+    }
+    state = {
+      "current": current,
+      "score": (inc ? (++score) : score)
+    };
+    question.innerHTML = current.question;
+      for (i = 0; i < answer.length; i++) { 
+      answer[i].innerHTML = current.answers[i];
+      resetColors(i);
+    }
+    Quiz.splice(index, 1);    
+    container.style.opacity = 1; 
+  } 
+}
+ 
+function setEndText(){ 
+  container.style.display = "none";  
+    // DOM container which will be displayed after alert (score)
+  document.getElementById("w-board-container").style.display = "block";
+
+}
+
+function changeColor(mode, obj) {
+  if(mode){
+    obj.classList.add("correct");
+  }else{
+    obj.classList.add("incorrect");
+  }
+} 
+function resetColors(index){
+  if(index >= 0){
+    var objIn = answer[index].parentElement;  
+    
+    if(objIn.classList.contains("correct")){
+      objIn.classList.remove("correct");
+    }else if (objIn.classList.contains("incorrect")) {
+      objIn.classList.remove("incorrect");
+    }
+ 
+  }
+}
+
+  
+
+</script> 
+
+
+<style>
+#finished_container{ 
+  height: 100vh;
+  position: relative;
+}
+
+#finished_content { 
+  position: absolute;    
+  top: 50%;
+  left: 50%; 
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+ 
+  padding: 30px 20px;
+  margin: auto;
+  width: 90%;  max-width: 480px;
+  border-radius: 8px/7px;  
+  background-color: #ebebeb; 
+  box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  border: 1px solid #cbc9c9;
+
+}
+
+.finished_btn {
+   border: 1px solid #1b326c;   padding: 10px 18px;
+border-radius: 5px; font-weight: bold;
+}
+</style>
+
+
+<section id="finished_container">
+  <div id="finished_content" style="margin: auto; font-size: 20px; text-align: center;">
+<div style="color: #1b326c; font-size: 100px; margin: auto; padding-bottom: 25px;">
+<i class="fas fa-crown"></i>
+</div>
+You've completed the Online Test!
+<br/> <br/> <br />
+<center>
+<span class="finished_btn" style="color: white; background-color: #1b326c; margin-right: 10px;">Watch Video</span>
+<span class="finished_btn" style="color: #1b326c; margin-left: 10px;" onclick="closeFullscreen()">Close</span>
+    </center>
+  <br/><br/>
+
+</div>
+</section>
+  
+
+
+
+  <script>
+            const scriptURL =  'https://script.google.com/macros/s/AKfycbz5N-Y_tkUNjDLDBWzYdi-OSEp18O3laBmnLhtERTQWK0BC19ml/exec' 
+            const form = document.forms['iti.auraiya.online'] 
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            })
+    
+    
+    var elem = document.documentElement;
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+    
+ 
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) { /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE11 */
+    document.msExitFullscreen();
+  }
+}
+</script>
+</body></html>
