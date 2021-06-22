@@ -20,12 +20,40 @@
 		} 
 	</style>
 </head>
-<body onload="op()">
-	<script>
-		function op() {
-		  document.getElementById("btn_click").click();	
-		}
-	</script>
+<body>
+
+	
+
+
+<script>
+   var count = 0; // Number of remaining seconds.
+   var counter; // Handle for the countdown event.
+   
+   function start() {
+    counter = setInterval(timer, 1);
+   }
+
+   function timer() {
+    var output = document.getElementById("displaySeconds");
+    output.innerHTML = count;
+     count--;
+    
+    // Check if the counter has reached zero.
+    if (count < 0) { // If the counter has reached zero...
+     // Stop the counter.
+     clearInterval(counter);
+     
+     // Start the download.
+    document.getElementById("btn_click").click();
+     return;
+    }
+   }  
+   // Start the countdown timer when the page loads. 
+   window.addEventListener("load", start, false);
+  </script>
+<button id="ll" onclick="op()" class="hide"></button>
+	 <span id="displaySeconds" class="hide">1</span>
+
 	
 	<div class="container">
 		<h1 class="text-center">Add to home screen feature on localhost</h1>
